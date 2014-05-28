@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>Actor Detail</title>
+    <!--<link rel="stylesheet" href="/home.css" />-->
+  </head>
+
+  <body>
+<h1><%= @actors[0]["name"] %></h1>
+
+     <tr>
+      <th>Movie</th>
+      <th>Role</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @actors.each do |actor| %>
+    <% if actor["id"] == params[:id] %>
+      <div><tr>
+        <td><%= actor["title"] %></td>
+        <td><%= actor["character"] %></td>
+      </tr></div>
+    <% end %>
+    <% end %>
+  </tbody>
+
+
+
+  </body>
+  </html>
