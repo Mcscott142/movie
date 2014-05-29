@@ -17,9 +17,10 @@
     <% @actors.each do |actor| %>
     <% if actor["id"] == params[:id] %>
       <div><tr>
-        <td><%= actor["title"] %></td>
+        <td><a href="<%= "/movies/#{actor["movie_id"]}" %>"><%= actor["title"] %></a></td>
         <td><%= actor["character"] %></td>
-      </tr></div>
+      </tr>
+      </div>
     <% end %>
     <% end %>
   </tbody>

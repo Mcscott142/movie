@@ -6,6 +6,27 @@
   </head>
 
   <body>
-  <h1>Movie Detail</h1>
+  <h1> <%= @movies[0]["title"] %> </h1>
+
+
+  <h3><%= "Genre: #{@movies[0]["genre"]}" %></h3>
+  <h3><%= "Studio: #{@movies[0]["studio"]}" %></h3>
+  <div>
+  <h2>Cast and Characters</h2>
+  <thead>
+  <th>Actor</th>
+  <th>Role</th>
+  </thead>
+  <br>
+  <% @movies.each do |movie| %>
+  <tr>
+  <td><a href="<%= "/actors/#{movie["actor_id"]}" %>"><%= movie["actor_name"] %></a></td>
+  <td><%= movie["character"] %></td>
+  </tr>
+  <br>
+  <% end %>
+  </tbody>
+
+  </div>
   </body>
   </html>
